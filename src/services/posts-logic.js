@@ -1,8 +1,9 @@
+const axios = require('axios');
+const vaildSortBy = ['id', 'reads', 'likes', 'popularity'];
+const validDirection = ['desc', 'asc'];
 
 // Posts .get request
 const getPosts = (req, res) => {
-    
-    const axios = require('axios');
     const tags = req.query.tag;
     const sortBy = req.query.sortBy || 'id';
     const direction = req.query.direction;
@@ -41,8 +42,6 @@ const getPosts = (req, res) => {
 
 // validateParameters function
 function validateParameters(sortBy, direction, res) {
-    const vaildSortBy = ['id', 'reads', 'likes', 'popularity'];
-    const validDirection = ['desc', 'asc'];
     let isValid = true;
 
     if (sortBy && !vaildSortBy.includes(sortBy)) {
