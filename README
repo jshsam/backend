@@ -1,0 +1,27 @@
+Summary:
+
+    backend is my application for the backend-assessment - Blog Posts project. 
+The entry point for this application is app.js located in the src folder. In here I set up the app and port. 
+Inside the /src/api-routes folder I have the ping.js file and the posts.js file.
+ping.js is where I set up the ping .get request. posts.js is where I set up the posts.get request.
+Both of these get requests have their business-logic set up in respective files located in /src/services.
+Inside src/service I have ping-logic.js and posts-logic.js that has all the necessary code for the get requests.
+Inside /src/__tests__ is located postApi.spec.js where all my tests are located. I used jest.js for testing.
+To cache I used npm 'apicache'. 
+
+Commands:
+
+Install cmd is: npm install
+Run cmd is:  npm start
+Test cmd is: npm test
+Port: 3000
+
+Instructions:
+
+    Run cmd starts the server. I used Insomnia to test my connections with http://localhost:3000/api/ping for the ping route 
+and http://localhost:3000/api/posts/:tag/:sortBy?/:direction?. For the posts route substitute :tag with 'tag=tagName' where 
+tagName is any tag and if more than one separate them by comma. Substitute :sortBy? with 'sortBy=sortByOption' where sortByOption 
+is one of 4 valid sortBy options: id, reads, likes, popularity. And substitute :direction? with 'direction=directionValue' where 
+directionValue is one of two valid directions: asc, desc. Tag is a required parameter while sortBy and direction are not. if either
+or both sortBy and direction are not included they will go to their default value. sortBy default is 'id' and direction default is 'asc'.
+To test type npm test in terminal.
