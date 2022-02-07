@@ -15,11 +15,9 @@ const getPosts = (req, res) => {
 
     // Checks if sortBy and direction parameters are valid. If not sends appropriate error message.
     if (!validateParameters(sortBy, direction, res)) {return;};
-       
-    // With Parameters all present/valid request moves forward.
-    let tagsArray = tags.split(',');
 
     // Sets up the request calls with all tag parameters
+    let tagsArray = tags.split(',');
     let requests = tagsArray.map((tag, i) => {
         return axios.get(`https://api.hatchways.io/assessment/blog/posts?tag=${tag}`);
     });
